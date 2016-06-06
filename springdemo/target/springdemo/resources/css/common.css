@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.button {
+	font-size: 20px;
+	background: #ccc;
+}
+
+.red-text {
+	color: red;
+	font-size: 30px;
+}
+
+.green-text {
+	color: green;
+	font-size: 20px;
+}
+
+#Auto complete 
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 5px 5px; white-space: nowrap; overflow: hidden; font-size:22px}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #3399FF; }

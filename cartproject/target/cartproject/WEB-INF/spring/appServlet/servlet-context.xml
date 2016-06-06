@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model: Cái này cực kỳ 
+		quan trọng, không có thì nó không gọi controller bằng @Controller -->
+	<annotation-driven>
+	</annotation-driven>
+
+	<!-- Khai báo các @Controller ở một file riêng -->
+	<beans:import resource="controllers.xml" />
+
+	<!-- Setting cho View Resolver -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+	<!-- Mapping toàn bộ các resources cần thiết(static file), cache 1 năm -->
+	<resources mapping="/styles/**" location="/resources/css/"  cache-period="31556926"/>
+	<resources mapping="/scripts/**" location="/resources/js/" cache-period="31556926"/>
+	<resources mapping="/images/**" location="/resources/images/" cache-period="31556926"/>
+
+</beans:beans>

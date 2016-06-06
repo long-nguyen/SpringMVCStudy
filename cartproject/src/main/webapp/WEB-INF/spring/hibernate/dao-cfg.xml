@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- File này chuyên dành cho việc cấu hình các file DAO, thường thì hibernate 
+		không cần file này, nhưng với spring thì cần khai báo các dao này dưới dạng 
+		bean để quản lý -->
+	<!-- Có bao nhiêu DAO thì khai báo hết ở đây -->
+
+	<bean id="accountDAO" class="com.au.springdemo.dao.AccountDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="productDAO" class="com.au.springdemo.dao.ProductDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+	<bean id="orderDAO" class="com.au.springdemo.dao.OrderDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory" />
+		<property name="productDAO" ref="productDAO" />
+	</bean>
+</beans>

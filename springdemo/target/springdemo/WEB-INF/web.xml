@@ -1,0 +1,45 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<!-- Tên hiển thị -->
+	<display-name>springdemo</display-name>
+
+	<!-- Khai báo dispatcher servlet, ta đặt theo kiến trúc riêng thay vì để 
+		tên mặc định như của spring mvc -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- Khai báo context riêng cho servlet -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Khai báo các context file ở đây-->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			<!-- Root context -->
+			/WEB-INF/spring/root-context.xml,
+			<!-- Hibernate config -->
+			/WEB-INF/spring/hibernate/datasource-hibernate-cfg.xml,
+          	/WEB-INF/spring/hibernate/dao-cfg.xml
+          	/WEB-INF/spring/hibernate/transaction-cfg.xml
+		</param-value>
+	</context-param>
+
+	<listener>
+		<!-- Context loader listener -->
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+</web-app>
