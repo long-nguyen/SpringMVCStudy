@@ -157,7 +157,7 @@
 
 
 	<build>
-		<finalName>springdemo</finalName>
+		<finalName>cartproject</finalName>
 		<plugins>
 			<!-- Config: Maven Tomcat Plugin -->
 			<!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->

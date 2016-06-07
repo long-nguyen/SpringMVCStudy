@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.au</groupId>
-	<artifactId>springdemo</artifactId>
+	<artifactId>cartproject</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springdemo Maven Webapp</name>
@@ -157,7 +157,7 @@
 
 
 	<build>
-		<finalName>springdemo</finalName>
+		<finalName>cartproject</finalName>
 		<plugins>
 			<!-- Config: Maven Tomcat Plugin -->
 			<!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
